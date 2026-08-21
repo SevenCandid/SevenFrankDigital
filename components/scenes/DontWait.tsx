@@ -22,20 +22,13 @@ export function DontWait() {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Scene C (Numbers) - untouched
+    // 1. Scene C (Numbers) - Auto-play on entry, no pin, no scrub.
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: numberSceneRef.current,
-        start: "top top", // Pin when the scene hits the top of the viewport
-        end: "+=200%", // Scroll distance to keep it pinned
-        pin: true,
-        pinSpacing: true, // Pushes subsequent content down
-        onEnter: () => tl.play(),
-        onEnterBack: () => tl.play(),
-        onLeave: () => tl.pause(),
-        onLeaveBack: () => tl.pause(),
-      },
-      paused: true, // Start paused, let scrollTrigger play it
+        start: "top 60%", // Start when it enters the viewport
+        once: true,       // Play only once per page load
+      }
     });
 
     // Ensure all elements are initially hidden but occupy space/position correctly
@@ -45,18 +38,18 @@ export function DontWait() {
     });
     
     // 047 fades in, then fades out
-    tl.to(q47.current, { opacity: 1, autoAlpha: 1, duration: 1 })
-      .to(q47.current, { opacity: 0, autoAlpha: 0, duration: 1 })
+    tl.to(q47.current, { opacity: 1, autoAlpha: 1, duration: 0.8, ease: "power2.out" })
+      .to(q47.current, { opacity: 0, autoAlpha: 0, duration: 0.8, ease: "power2.in" })
       
       // 046 fades in, then fades out
-      .to(q46.current, { opacity: 1, autoAlpha: 1, duration: 1 })
-      .to(q46.current, { opacity: 0, autoAlpha: 0, duration: 1 })
+      .to(q46.current, { opacity: 1, autoAlpha: 1, duration: 0.8, ease: "power2.out" })
+      .to(q46.current, { opacity: 0, autoAlpha: 0, duration: 0.8, ease: "power2.in" })
       
       // 045 fades in and stays
-      .to(q45.current, { opacity: 1, autoAlpha: 1, duration: 1 })
+      .to(q45.current, { opacity: 1, autoAlpha: 1, duration: 0.8, ease: "power2.out" })
       
       // Message appears below 045
-      .to(msg.current, { opacity: 1, autoAlpha: 1, duration: 1 });
+      .to(msg.current, { opacity: 1, autoAlpha: 1, duration: 0.8, ease: "power2.out" }, "-=0.2");
 
     // Fade in Idea
     gsap.fromTo(ideaRef.current, 
