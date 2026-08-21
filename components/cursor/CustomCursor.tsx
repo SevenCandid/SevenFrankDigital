@@ -22,7 +22,7 @@ export function CustomCursor() {
 
   useEffect(() => {
     // Detect touch device
-    if (window.matchMedia("(pointer: coarse)").matches) {
+    if (window.matchMedia("(pointer: coarse)").matches || "ontouchstart" in window || navigator.maxTouchPoints > 0) {
       setIsTouchDevice(true);
       return;
     }

@@ -22,61 +22,49 @@ export function SmartHomeVisual() {
       />
 
       <div className="flex-1 flex relative items-center justify-center">
-        {/* Conceptual Board */}
-        <div className="relative w-64 md:w-96 h-40 md:h-56 bg-ink border border-ink/20 rounded shadow-2xl flex p-4">
+        
+        {/* Composition Wrapper */}
+        <div className="relative w-full h-full max-w-4xl mx-auto flex items-center justify-center p-8">
           
-          {/* Main ESP32-style module area */}
-          <div className="w-1/2 h-full border border-soft-white/10 relative p-3 flex flex-col justify-between">
-            <div className="w-full h-8 bg-soft-white/5 border-b border-soft-white/10" />
-            <div className="w-12 h-12 bg-soft-white/10 rounded-sm absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-            
-            <div className="flex justify-between w-full">
-              <span className="font-sans text-[7px] text-lime uppercase tracking-widest">WIFI</span>
-              <span className="font-sans text-[7px] text-soft-white/30 uppercase tracking-widest">ESP32</span>
-            </div>
+          {/* Main Large Frame (Center/Left) */}
+          <div className="absolute left-[10%] md:left-[20%] top-[20%] md:top-[15%] w-[55%] md:w-[45%] aspect-[4/3] bg-[#0a0a0a] border border-ink/20 shadow-2xl z-10 flex items-center justify-center overflow-hidden group">
+             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+             <span className="font-sans text-[9px] uppercase tracking-widest text-white/30">IMG 01 / MAIN UNIT</span>
           </div>
 
-          {/* GPIO Pins area */}
-          <div className="w-8 h-full border-l border-soft-white/10 flex flex-col justify-around items-center px-1">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="w-3 h-3 rounded-full border border-soft-white/20 bg-soft-white/5" />
-            ))}
+          {/* Medium Portrait Frame (Right overlap) */}
+          <div className="absolute right-[5%] md:right-[20%] top-[10%] md:top-[25%] w-[40%] md:w-[28%] aspect-[3/4] bg-[#111111] border border-ink/20 shadow-2xl z-20 flex items-center justify-center backdrop-blur-sm overflow-hidden group">
+             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+             <span className="font-sans text-[9px] uppercase tracking-widest text-white/30">IMG 02 / SENSORS</span>
           </div>
 
-          {/* Sensor/Wiring conceptual area */}
-          <div className="flex-1 flex flex-col justify-between pl-4">
-            <div className="flex flex-col gap-2">
-              <div className="h-0.5 w-full bg-lime/40" />
-              <div className="h-0.5 w-3/4 bg-soft-white/20" />
-              <div className="h-0.5 w-full bg-lime/40" />
-            </div>
-            
-            <div className="w-full h-16 border border-soft-white/10 flex items-center justify-center text-center p-2">
-               <span className="font-sans text-[7px] text-soft-white/40 uppercase tracking-widest">
-                 SENSOR<br/>MODULE
-               </span>
-            </div>
+          {/* Small Detail Frame (Bottom Left) */}
+          <div className="absolute left-[5%] md:left-[12%] bottom-[15%] md:bottom-[10%] w-[35%] md:w-[22%] aspect-square bg-[#0a0a0a] border border-ink/20 shadow-xl z-30 flex items-center justify-center overflow-hidden group">
+             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+             <span className="font-sans text-[9px] uppercase tracking-widest text-white/30 text-center px-4">IMG 03 / DETAIL</span>
           </div>
-
-          {/* Status LED */}
-          <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-lime animate-pulse shadow-[0_0_8px_rgba(200,255,0,0.8)]" />
+          
+          {/* Conceptual Technical Lines */}
+          <div className="absolute left-[5%] top-[15%] w-8 h-px bg-ink/20" />
+          <div className="absolute right-[5%] bottom-[15%] w-8 h-px bg-ink/20" />
+          
         </div>
 
         {/* Labels outside board */}
-        <div className="absolute bottom-6 left-6 flex flex-col gap-1">
-          <span className="font-sans text-[9px] uppercase tracking-[0.25em] text-ink/40">
+        <div className="absolute bottom-6 left-6 flex flex-col gap-1 z-40">
+          <span className="font-sans text-[9px] uppercase tracking-[0.25em] text-ink/60">
             HARDWARE COMPOSITION
           </span>
-          <span className="font-sans text-[8px] uppercase tracking-widest text-ink/30">
+          <span className="font-sans text-[8px] uppercase tracking-widest text-ink/40">
             MICROCONTROLLER / SENSORS / RELAYS
           </span>
         </div>
       </div>
       
       {/* Footer */}
-      <div className="px-5 py-2 border-t border-ink/[0.05] flex justify-end bg-transparent">
+      <div className="px-5 py-2 border-t border-ink/[0.05] flex justify-end bg-transparent z-40">
         <span className="font-sans text-[7px] text-ink/30 tracking-widest uppercase">
-          CONCEPTUAL / IN DEVELOPMENT
+          ASSET PLACEMENT PENDING
         </span>
       </div>
     </div>

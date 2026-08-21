@@ -1,13 +1,16 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export function End() {
+  const [isExecuted, setIsExecuted] = useState(false);
+
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-between items-center py-12 px-6">
       {/* Command Line Contact CTA */}
       <div className="flex-1 flex flex-col items-center justify-center w-full max-w-3xl mx-auto gap-8">
         
-        <div className="w-full border border-current/10 bg-black/5 dark:bg-white/5 p-6 md:p-10 font-sans text-xs md:text-sm flex flex-col gap-4 shadow-2xl backdrop-blur-sm">
+        <div className="w-full border border-current/10 bg-black/5 dark:bg-white/5 p-6 md:p-10 font-sans text-xs md:text-sm flex flex-col gap-4 shadow-2xl backdrop-blur-sm transition-all duration-700">
           {/* Terminal Window Dots */}
           <div className="flex items-center gap-2 mb-2">
              <span className="w-2 h-2 rounded-full bg-current/20" />
@@ -28,26 +31,42 @@ export function End() {
             </div>
           </div>
 
-          <div className="flex items-center mt-8 font-mono uppercase tracking-widest text-[11px] md:text-sm">
-            <span className="text-lime font-bold">root@system</span>
-            <span className="opacity-40 mx-2">:</span>
-            <span className="opacity-60">~/contact</span>
-            <span className="opacity-40 mx-2">$</span>
-            
-            <a 
-              href="mailto:hello@example.com" 
-              className="text-current border-b border-current/30 hover:border-current hover:text-lime transition-colors pb-0.5 ml-2 mr-1 lowercase"
-              data-cursor="OPEN ↗"
+          {!isExecuted ? (
+            <div className="mt-8 flex items-center">
+              <button
+                onClick={() => setIsExecuted(true)}
+                className="font-mono text-[10px] md:text-xs text-black bg-lime px-4 py-2 hover:bg-lime/80 transition-colors uppercase tracking-widest font-bold"
+                data-cursor="RUN"
+              >
+                EXECUTE ./CONTACT.SH
+              </button>
+            </div>
+          ) : (
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center mt-8 font-mono uppercase tracking-widest text-[11px] md:text-sm"
             >
-              hello@example.com
-            </a>
+              <span className="text-lime font-bold">root@system</span>
+              <span className="opacity-40 mx-2">:</span>
+              <span className="opacity-60">~/contact</span>
+              <span className="opacity-40 mx-2">$</span>
+              
+              <a 
+                href="mailto:hello@example.com" 
+                className="text-current border-b border-current/30 hover:border-current hover:text-lime transition-colors pb-0.5 ml-2 mr-1 lowercase"
+                data-cursor="OPEN ↗"
+              >
+                hello@example.com
+              </a>
 
-            <motion.div
-              animate={{ opacity: [1, 0] }}
-              transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-              className="w-2 h-[14px] md:h-[18px] bg-lime inline-block translate-y-[2px]"
-            />
-          </div>
+              <motion.div
+                animate={{ opacity: [1, 0] }}
+                transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+                className="w-2 h-[14px] md:h-[18px] bg-lime inline-block translate-y-[2px]"
+              />
+            </motion.div>
+          )}
         </div>
       </div>
 

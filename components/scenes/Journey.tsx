@@ -24,6 +24,7 @@ export function Journey() {
       id="journey"
     >
       <div className="w-full max-w-2xl flex flex-col gap-0">
+        <h2 className="font-sans text-[10px] md:text-xs uppercase tracking-widest text-ink/30 mb-8 border-b border-black/[0.08] pb-4">BUILD LOG</h2>
         {timeline.map((block, bi) => (
           <div
             key={block.year}

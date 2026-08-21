@@ -3,8 +3,22 @@ import { motion } from "framer-motion";
 
 export function SevenDesktopVisual() {
   return (
-    <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-[#0A0A0A] relative overflow-hidden flex flex-col border border-white/10 rounded-sm">
-      {/* Subtle Grain Overlay */}
+    <div className="w-full flex flex-col items-center justify-center">
+      
+      {/* Device Frame Wrapper */}
+      <div className="w-full max-w-5xl relative">
+        
+        {/* Device Top / Camera indicator */}
+        <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-2.5 bg-[#0a0a0a] rounded-b-md flex justify-center items-center z-20 border border-t-0 border-white/10">
+           <div className="w-1 h-1 rounded-full bg-white/20" />
+        </div>
+
+        {/* Screen Bezel */}
+        <div className="w-full bg-[#050505] p-2 md:p-4 rounded-xl md:rounded-2xl border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative z-10">
+          
+          {/* Inner Screen Area */}
+          <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#0A0A0A] relative overflow-hidden flex flex-col rounded shadow-inner">
+            {/* Subtle Grain Overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-screen"
         style={{
@@ -199,9 +213,19 @@ export function SevenDesktopVisual() {
               </span>
             </div>
           </div>
-
+          </div>
         </div>
       </div>
+      </div>
+      </div>
+      {/* Laptop Base/Hinge (Bottom) */}
+      <div className="w-full max-w-5xl relative">
+        <div className="w-[104%] -ml-[2%] h-3 md:h-5 bg-gradient-to-b from-[#1a1a1a] to-[#050505] rounded-b-2xl border border-white/[0.05] shadow-2xl relative z-0 mt-[-1px] flex justify-center overflow-hidden">
+            <div className="w-32 h-1 bg-black rounded-b-md opacity-50" />
+        </div>
+        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] h-8 bg-black/40 blur-xl rounded-[100%]" />
+      </div>
+
     </div>
   );
 }

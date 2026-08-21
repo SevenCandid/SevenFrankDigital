@@ -1,8 +1,48 @@
 // Machine scene — editorial technical annotation composition
 // Readability pass: annotations lowered, primary text at full contrast
+"use client";
+import { useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 export function Machine() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Fade in from Build, fade out to Nexra
+    gsap.fromTo(contentRef.current,
+      { opacity: 0, scale: 0.95 },
+      {
+        opacity: 1,
+        scale: 1,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          end: "top 20%",
+          scrub: true,
+        }
+      }
+    );
+
+    gsap.to(contentRef.current, {
+      opacity: 0,
+      y: -50,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "bottom 80%",
+        end: "bottom 30%",
+        scrub: true,
+      }
+    });
+  }, { scope: sectionRef });
+
   return (
     <section
+      ref={sectionRef}
       className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden"
       id="machine"
     >
@@ -16,7 +56,7 @@ export function Machine() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-5xl px-6 md:px-12 flex flex-col gap-20 py-32">
+      <div ref={contentRef} className="relative z-10 w-full max-w-5xl px-6 md:px-12 flex flex-col gap-20 py-32">
         {/* Top annotation row */}
         <div className="flex justify-between items-start">
           <div className="flex flex-col gap-1">

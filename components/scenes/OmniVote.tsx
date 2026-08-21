@@ -17,6 +17,8 @@ export function OmniVote() {
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const section = containerRef.current;
+    if (!section) return;
 
     // Fade in Idea
     gsap.fromTo(ideaRef.current, 
@@ -67,7 +69,7 @@ export function OmniVote() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full px-6 flex flex-col bg-[#0A0A0A] text-[#EAEAE6]"
+      className="relative w-full px-6 flex flex-col"
       id="omnivote"
     >
       {/* IDEA BLOCK */}

@@ -29,9 +29,13 @@ export function DontWait() {
         start: "top top", // Pin when the scene hits the top of the viewport
         end: "+=200%", // Scroll distance to keep it pinned
         pin: true,
-        scrub: 1, // Smooth scrubbing
         pinSpacing: true, // Pushes subsequent content down
-      }
+        onEnter: () => tl.play(),
+        onEnterBack: () => tl.play(),
+        onLeave: () => tl.pause(),
+        onLeaveBack: () => tl.pause(),
+      },
+      paused: true, // Start paused, let scrollTrigger play it
     });
 
     // Ensure all elements are initially hidden but occupy space/position correctly
@@ -89,7 +93,7 @@ export function DontWait() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full flex flex-col items-center bg-[#F4F3EF]"
+      className="relative w-full flex flex-col items-center"
       id="dontwait"
     >
       {/* 

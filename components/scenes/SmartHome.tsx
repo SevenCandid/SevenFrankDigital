@@ -16,6 +16,8 @@ export function SmartHome() {
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const section = containerRef.current;
+    if (!section) return;
 
     // Fade in Idea
     gsap.fromTo(ideaRef.current, 
@@ -52,7 +54,7 @@ export function SmartHome() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full flex flex-col bg-[#F4F3EF] text-[#111111]"
+      className="relative w-full flex flex-col"
       id="smarthome"
     >
       {/* IDEA BLOCK */}

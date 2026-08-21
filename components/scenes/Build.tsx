@@ -25,6 +25,20 @@ export function Build() {
       }),
       scrub: true,
     });
+
+    gsap.fromTo(containerRef.current,
+      { opacity: 1 },
+      {
+        opacity: 0,
+        y: -100,
+        scrollTrigger: {
+          trigger: section,
+          start: "center center",
+          end: "bottom center",
+          scrub: true,
+        }
+      }
+    );
   }, { scope: sectionRef });
 
   return (

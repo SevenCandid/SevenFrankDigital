@@ -84,7 +84,7 @@ export function Business() {
           </div>
           <p className="font-sans text-xs md:text-sm text-[#111111]/70 max-w-lg leading-relaxed">
             Separate, privately owned management systems built for different organizations with real operational requirements.
-            Includes UPP, GREEN LITE, and DIN.
+            Includes UPP, GREEN LITE, and DIN — distinct architectures solving distinct problems.
           </p>
         </div>
 
