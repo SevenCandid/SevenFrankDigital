@@ -58,21 +58,22 @@ export function VeroSeven() {
           <span className="font-sans text-xs uppercase tracking-[0.25em]" style={{ color: "rgba(234,234,230,0.5)" }}>
             SOMETHING BIGGER.
           </span>
-          <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
-            <h2 className="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-[0.9]" style={{ color: "#EAEAE6" }}>
-              VEROSEVEN<br />INNOVATIONS
+          <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+            <h2 className="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-[0.9] flex flex-col md:flex-row md:items-start gap-4 md:gap-8" style={{ color: "#EAEAE6" }}>
+              <span>
+                VEROSEVEN<br />INNOVATIONS
+              </span>
+              <div className="relative h-[0.9em] w-[3.6em] opacity-40 mix-blend-screen transition-opacity hover:opacity-100">
+                 <Image 
+                   src="/assets/veroseven_logo_png.png" 
+                   alt="VeroSeven Logo" 
+                   fill 
+                   className="object-contain object-left md:object-center" 
+                   sizes="(max-width: 768px) 256px, 512px"
+                   priority
+                 />
+              </div>
             </h2>
-            {/* Logo acting as a subtle brand mark / trademark stamp */}
-            <div className="relative w-24 md:w-32 h-6 md:h-8 opacity-40 mix-blend-screen transition-opacity hover:opacity-100 mt-1 md:mt-2">
-               <Image 
-                 src="/assets/veroseven_logo_png.png" 
-                 alt="VeroSeven Logo" 
-                 fill 
-                 className="object-contain object-left" 
-                 sizes="(max-width: 768px) 96px, 128px"
-                 priority
-               />
-            </div>
           </div>
         </div>
 
