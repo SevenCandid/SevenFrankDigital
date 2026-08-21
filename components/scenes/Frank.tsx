@@ -18,14 +18,14 @@ export function Frank() {
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
           {/* Portrait - Asymmetric Layout with Transparent PNG */}
           <div className="w-full md:w-2/5 shrink-0 relative" data-cursor="VIEW">
-            <div className="relative w-full aspect-[4/5] md:scale-110 md:-translate-y-4 md:origin-bottom-left transition-transform duration-700 ease-out hover:scale-105">
+            <div className="relative w-full aspect-[4/5] md:-translate-y-4 transition-transform duration-700 ease-out hover:scale-105 origin-bottom">
               {/* The real transparent portrait asset */}
               <div className="absolute inset-0 z-20 overflow-visible translate-y-[5%] md:translate-y-[10%] translate-x-[2%]">
                  <Image 
                    src="/assets/frank_portrait_png.png" 
                    alt="Frank Bediako" 
                    fill 
-                   className="object-contain object-bottom md:object-right-bottom scale-[1.1] md:scale-125"
+                   className="object-contain object-bottom md:object-left-bottom scale-100 md:scale-110 md:origin-bottom-left"
                    sizes="(max-width: 768px) 100vw, 50vw"
                    priority
                  />
