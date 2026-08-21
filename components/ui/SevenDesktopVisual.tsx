@@ -14,10 +14,14 @@ export function SevenDesktopVisual() {
         </div>
 
         {/* Screen Bezel */}
-        <div className="w-full bg-[#050505] p-2 md:p-4 rounded-xl md:rounded-2xl border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative z-10">
+        <div className="w-full bg-gradient-to-br from-[#2a2a2a] via-[#111111] to-[#050505] p-2 md:p-3 rounded-xl md:rounded-[20px] border border-white/15 shadow-[0_0_50px_rgba(255,255,255,0.05)] relative z-10 ring-1 ring-black/50">
           
           {/* Inner Screen Area */}
-          <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#0A0A0A] relative overflow-hidden flex flex-col rounded shadow-inner">
+          <div className="w-full aspect-[16/10] md:aspect-[16/9] bg-[#0A0A0A] relative overflow-hidden flex flex-col rounded md:rounded-md shadow-[inset_0_0_20px_rgba(0,0,0,1)] border border-black/80">
+            
+            {/* Glass Glare Effect */}
+            <div className="absolute top-0 left-0 w-full h-[40%] bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none z-50" />
+            
             {/* Subtle Grain Overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-screen"
@@ -220,8 +224,8 @@ export function SevenDesktopVisual() {
       </div>
       {/* Laptop Base/Hinge (Bottom) */}
       <div className="w-full max-w-5xl relative">
-        <div className="w-[104%] -ml-[2%] h-3 md:h-5 bg-gradient-to-b from-[#1a1a1a] to-[#050505] rounded-b-2xl border border-white/[0.05] shadow-2xl relative z-0 mt-[-1px] flex justify-center overflow-hidden">
-            <div className="w-32 h-1 bg-black rounded-b-md opacity-50" />
+        <div className="w-[104%] -ml-[2%] h-3 md:h-5 bg-gradient-to-b from-[#333333] via-[#1a1a1a] to-[#050505] rounded-b-2xl border border-white/20 border-t-0 shadow-[0_30px_60px_rgba(0,0,0,0.8)] relative z-0 mt-[-1px] flex justify-center overflow-hidden ring-1 ring-black/50">
+            <div className="w-32 h-1.5 md:h-2 bg-gradient-to-b from-[#0a0a0a] to-black rounded-b-md opacity-90 border-x border-b border-white/5" />
         </div>
         <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] h-8 bg-black/40 blur-xl rounded-[100%]" />
       </div>
