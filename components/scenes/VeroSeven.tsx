@@ -62,7 +62,7 @@ export function VeroSeven() {
             <h2 className="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-[0.9] flex flex-col gap-2" style={{ color: "#EAEAE6" }}>
               <span className="flex items-start gap-4">
                 VEROSEVEN
-                <span className="relative inline-block h-[1em] w-[1em] md:h-[1.15em] md:w-[1.15em] opacity-80 transition-opacity hover:opacity-100 self-center">
+                <span className="relative inline-block h-[1em] w-[1em] md:h-[1.15em] md:w-[1.15em] transition-all duration-500 hover:brightness-125 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] self-center">
                    <Image 
                      src="/assets/veroseven_logo_png.png" 
                      alt="VeroSeven Logo" 
