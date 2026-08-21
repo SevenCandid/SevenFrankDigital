@@ -58,9 +58,22 @@ export function VeroSeven() {
           <span className="font-sans text-xs uppercase tracking-[0.25em]" style={{ color: "rgba(234,234,230,0.5)" }}>
             SOMETHING BIGGER.
           </span>
-          <h2 className="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-[0.9]" style={{ color: "#EAEAE6" }}>
-            VEROSEVEN<br />INNOVATIONS
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
+            <h2 className="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-[0.9]" style={{ color: "#EAEAE6" }}>
+              VEROSEVEN<br />INNOVATIONS
+            </h2>
+            {/* Logo acting as a subtle brand mark / trademark stamp */}
+            <div className="relative w-24 md:w-32 h-6 md:h-8 opacity-40 mix-blend-screen transition-opacity hover:opacity-100 mt-1 md:mt-2">
+               <Image 
+                 src="/assets/veroseven_logo_png.png" 
+                 alt="VeroSeven Logo" 
+                 fill 
+                 className="object-contain object-left" 
+                 sizes="(max-width: 768px) 96px, 128px"
+                 priority
+               />
+            </div>
+          </div>
         </div>
 
         {/* Description + CTA + Logo Signature */}
@@ -70,17 +83,6 @@ export function VeroSeven() {
               A technology innovation company being built around products, digital systems,
               and emerging technologies.
             </p>
-            {/* Logo acting as a subtle brand mark / signature */}
-            <div className="relative w-32 md:w-40 h-8 md:h-10 opacity-50 mix-blend-screen transition-opacity hover:opacity-100">
-               <Image 
-                 src="/assets/veroseven_logo_png.png" 
-                 alt="VeroSeven Logo" 
-                 fill 
-                 className="object-contain object-left" 
-                 sizes="(max-width: 768px) 128px, 160px"
-                 priority
-               />
-            </div>
           </div>
 
           <a
