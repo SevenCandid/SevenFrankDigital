@@ -19,13 +19,17 @@ export function Frank() {
           {/* Portrait - Asymmetric Layout with Transparent PNG */}
           <div className="w-full md:w-2/5 shrink-0 relative" data-cursor="VIEW">
             <div className="relative w-full aspect-[4/5] md:scale-110 md:-translate-y-4 md:origin-bottom-left transition-transform duration-700 ease-out hover:scale-105">
-              <Image 
-                src="/assets/frank_portrait_png.png" 
-                alt="Frank Bediako" 
-                fill 
-                className="object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
-                priority
-              />
+              {/* The real transparent portrait asset */}
+              <div className="absolute inset-0 z-20 overflow-visible translate-y-[5%] md:translate-y-[10%] translate-x-[2%]">
+                 <Image 
+                   src="/assets/frank_portrait_png.png" 
+                   alt="Frank Bediako" 
+                   fill 
+                   className="object-contain object-bottom md:object-right-bottom scale-[1.1] md:scale-125"
+                   sizes="(max-width: 768px) 100vw, 50vw"
+                   priority
+                 />
+              </div>
             </div>
             
             {/* Subtle editorial framing behind the portrait */}

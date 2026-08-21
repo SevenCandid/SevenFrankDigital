@@ -64,6 +64,7 @@ export function VeroSeven() {
                alt="VeroSeven Logo" 
                fill 
                className="object-contain object-left" 
+               sizes="(max-width: 768px) 192px, 256px"
                priority
              />
           </div>
