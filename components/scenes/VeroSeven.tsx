@@ -4,6 +4,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+import Image from "next/image";
+
 export function VeroSeven() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -51,14 +53,20 @@ export function VeroSeven() {
           <div className="h-px w-8" style={{ backgroundColor: "rgba(234,234,230,0.2)" }} />
         </div>
 
-        {/* Main heading */}
-        <div className="flex flex-col gap-4">
+        {/* Main Brand Reveal */}
+        <div className="flex flex-col gap-8">
           <span className="font-sans text-xs uppercase tracking-[0.25em]" style={{ color: "rgba(234,234,230,0.5)" }}>
             SOMETHING BIGGER.
           </span>
-          <h2 className="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-[0.9]" style={{ color: "#EAEAE6" }}>
-            VEROSEVEN<br />INNOVATIONS
-          </h2>
+          <div className="relative w-48 md:w-64 h-16 md:h-20 opacity-90 transition-opacity hover:opacity-100">
+             <Image 
+               src="/assets/veroseven_logo_png.png" 
+               alt="VeroSeven Logo" 
+               fill 
+               className="object-contain object-left" 
+               priority
+             />
+          </div>
         </div>
 
         {/* Description + CTA */}

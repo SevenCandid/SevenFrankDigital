@@ -1,12 +1,12 @@
-import { Placeholder } from "@/components/ui/Placeholder";
+import Image from "next/image";
 
 export function Frank() {
   return (
     <section
-      className="relative min-h-screen w-full px-6 py-24 md:py-32 flex flex-col justify-center"
+      className="relative min-h-screen w-full px-6 py-24 md:py-32 flex flex-col justify-center overflow-hidden"
       id="frank"
     >
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Section label */}
         <div className="mb-12 md:mb-16">
           <span className="font-sans text-[9px] uppercase tracking-[0.3em] text-ink/30">
@@ -16,14 +16,20 @@ export function Frank() {
 
         {/* Two-column layout */}
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
-          {/* Portrait */}
-          <div className="w-full md:w-2/5 shrink-0" data-cursor="VIEW">
-            <Placeholder
-              label="FRANK / PORTRAIT"
-              aspectRatio="aspect-[4/5]"
-              variant="light"
-              className="border border-black/[0.08]"
-            />
+          {/* Portrait - Asymmetric Layout with Transparent PNG */}
+          <div className="w-full md:w-2/5 shrink-0 relative" data-cursor="VIEW">
+            <div className="relative w-full aspect-[4/5] md:scale-110 md:-translate-y-4 md:origin-bottom-left transition-transform duration-700 ease-out hover:scale-105">
+              <Image 
+                src="/assets/frank_portrait_png.png" 
+                alt="Frank Bediako" 
+                fill 
+                className="object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+                priority
+              />
+            </div>
+            
+            {/* Subtle editorial framing behind the portrait */}
+            <div className="absolute inset-0 border border-black/5 -z-10 translate-x-4 -translate-y-4 hidden md:block" />
           </div>
 
           {/* Text */}

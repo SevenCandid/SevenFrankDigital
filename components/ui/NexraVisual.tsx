@@ -1,87 +1,47 @@
-// Conceptual NEXRA dashboard — clearly labeled as a demo visualization
+import Image from "next/image";
+
 export function NexraVisual() {
-  const campaigns = [
-    { name: "Campus Campaign", status: "SENT", color: "text-lime" },
-    { name: "Product Launch", status: "SENDING", color: "text-soft-white/60" },
-    { name: "Announcement", status: "QUEUED", color: "text-soft-white/30" },
-  ];
-
   return (
-    <div className="w-full aspect-[16/9] bg-[#0d0d0d] relative overflow-hidden flex flex-col border border-white/5">
-      {/* Grain */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            "url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')",
-        }}
-      />
+    <div className="w-full relative overflow-hidden rounded-md border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group bg-[#050505]">
+      
+      {/* Aspect Ratio Container for Image */}
+      <div className="relative w-full aspect-[16/10] md:aspect-[16/9]">
+        <Image
+          src="/assets/nexra_dashboard.png"
+          alt="NEXRA bulk SMS dashboard"
+          fill
+          className="object-cover object-left-top transition-transform duration-1000 ease-out group-hover:scale-[1.02]"
+          quality={95}
+          priority
+        />
+        
+        {/* Subtle Overlay Hotspots to create responsive feel without fake functionality */}
+        {/* Sidebar Nav Area */}
+        <div 
+          className="absolute left-0 top-0 w-[15%] h-[80%] bg-white/0 hover:bg-white/[0.03] transition-colors duration-300 z-10 cursor-default"
+          data-cursor="VIEW"
+        />
+        
+        {/* Top Header Area */}
+        <div 
+          className="absolute left-[15%] top-0 w-[85%] h-[10%] bg-white/0 hover:bg-white/[0.03] transition-colors duration-300 z-10 cursor-default"
+          data-cursor="VIEW"
+        />
 
-      {/* Top bar */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.06]">
-        <span className="font-display text-soft-white text-xs tracking-[0.25em] uppercase">
-          NEXRA
-        </span>
-        <span className="font-sans text-[9px] text-lime tracking-widest uppercase">
-          ● LIVE
-        </span>
-      </div>
+        {/* Main Chart/Graph Area */}
+        <div 
+          className="absolute left-[15%] top-[15%] w-[60%] h-[50%] bg-white/0 hover:bg-white/[0.03] transition-colors duration-300 z-10 cursor-default"
+          data-cursor="VIEW"
+        />
 
-      {/* Body */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Left: campaigns */}
-        <div className="flex-1 flex flex-col px-6 py-5 border-r border-white/[0.06] gap-4">
-          <span className="font-sans text-[9px] uppercase tracking-widest text-soft-white/30">
-            CAMPAIGNS
-          </span>
-          <div className="flex flex-col gap-3">
-            {campaigns.map((c) => (
-              <div
-                key={c.name}
-                className="flex justify-between items-center py-2 border-b border-white/[0.05]"
-              >
-                <span className="font-sans text-[10px] text-soft-white/70">
-                  {c.name}
-                </span>
-                <span
-                  className={`font-sans text-[9px] uppercase tracking-widest ${c.color}`}
-                >
-                  {c.status}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Right Stats Panel */}
+        <div 
+          className="absolute right-0 top-[15%] w-[25%] h-[85%] bg-white/0 hover:bg-white/[0.03] transition-colors duration-300 z-10 cursor-default"
+          data-cursor="VIEW"
+        />
 
-        {/* Right: stats */}
-        <div className="flex flex-col w-36 md:w-48 shrink-0">
-          <div className="flex-1 flex flex-col items-center justify-center border-b border-white/[0.06] gap-1 px-4 py-5">
-            <span className="font-display text-2xl md:text-3xl text-soft-white tracking-tighter">
-              1,247
-            </span>
-            <span className="font-sans text-[8px] uppercase tracking-widest text-soft-white/30">
-              RECIPIENTS
-            </span>
-          </div>
-          <div className="flex-1 flex flex-col items-center justify-center gap-1 px-4 py-5">
-            <span className="font-display text-2xl md:text-3xl text-soft-white tracking-tighter">
-              3,891
-            </span>
-            <span className="font-sans text-[8px] uppercase tracking-widest text-soft-white/30">
-              MESSAGES
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Flow indicator */}
-      <div className="px-6 py-3 border-t border-white/[0.06] flex items-center gap-4">
-        <span className="font-sans text-[8px] text-soft-white/20 uppercase tracking-widest">
-          PLATFORM → CAMPAIGN → MESSAGE → RECIPIENT
-        </span>
-        <span className="ml-auto font-sans text-[8px] text-soft-white/20 tracking-widest">
-          CONCEPTUAL / DEMO
-        </span>
+        {/* Subtle Glass Glare over the screen */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none z-20" />
       </div>
     </div>
   );
