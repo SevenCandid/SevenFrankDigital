@@ -54,28 +54,35 @@ export function VeroSeven() {
         </div>
 
         {/* Main Brand Reveal */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
           <span className="font-sans text-xs uppercase tracking-[0.25em]" style={{ color: "rgba(234,234,230,0.5)" }}>
             SOMETHING BIGGER.
           </span>
-          <div className="relative w-48 md:w-64 h-16 md:h-20 opacity-90 transition-opacity hover:opacity-100">
-             <Image 
-               src="/assets/veroseven_logo_png.png" 
-               alt="VeroSeven Logo" 
-               fill 
-               className="object-contain object-left" 
-               sizes="(max-width: 768px) 192px, 256px"
-               priority
-             />
-          </div>
+          <h2 className="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-[0.9]" style={{ color: "#EAEAE6" }}>
+            VEROSEVEN<br />INNOVATIONS
+          </h2>
         </div>
 
-        {/* Description + CTA */}
-        <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-start">
-          <p className="font-sans text-sm md:text-base leading-relaxed max-w-sm" style={{ color: "rgba(234,234,230,0.75)" }}>
-            A technology innovation company being built around products, digital systems,
-            and emerging technologies.
-          </p>
+        {/* Description + CTA + Logo Signature */}
+        <div className="flex flex-col md:flex-row gap-10 md:gap-20 items-start mt-4">
+          <div className="flex flex-col gap-8 max-w-sm">
+            <p className="font-sans text-sm md:text-base leading-relaxed" style={{ color: "rgba(234,234,230,0.75)" }}>
+              A technology innovation company being built around products, digital systems,
+              and emerging technologies.
+            </p>
+            {/* Logo acting as a subtle brand mark / signature */}
+            <div className="relative w-32 md:w-40 h-8 md:h-10 opacity-50 mix-blend-screen transition-opacity hover:opacity-100">
+               <Image 
+                 src="/assets/veroseven_logo_png.png" 
+                 alt="VeroSeven Logo" 
+                 fill 
+                 className="object-contain object-left" 
+                 sizes="(max-width: 768px) 128px, 160px"
+                 priority
+               />
+            </div>
+          </div>
+
           <a
             href="#"
             className="font-sans text-[10px] uppercase tracking-widest border-b pb-0.5 hover:opacity-100 transition-opacity mt-2 md:mt-1 self-start"
