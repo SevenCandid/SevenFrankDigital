@@ -58,21 +58,22 @@ export function VeroSeven() {
           <span className="font-sans text-xs uppercase tracking-[0.25em]" style={{ color: "rgba(234,234,230,0.5)" }}>
             SOMETHING BIGGER.
           </span>
-          <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-            <h2 className="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-[0.9] flex flex-col md:flex-row md:items-start gap-4 md:gap-8" style={{ color: "#EAEAE6" }}>
-              <span>
-                VEROSEVEN<br />INNOVATIONS
+          <div className="flex flex-col md:items-start gap-4 md:gap-8">
+            <h2 className="font-display text-5xl md:text-8xl uppercase tracking-tighter leading-[0.9] flex flex-col gap-2" style={{ color: "#EAEAE6" }}>
+              <span className="flex items-start gap-4">
+                VEROSEVEN
+                <span className="relative inline-block h-[0.8em] w-[3.2em] opacity-40 mix-blend-screen transition-opacity hover:opacity-100 mt-[0.05em]">
+                   <Image 
+                     src="/assets/veroseven_logo_png.png" 
+                     alt="VeroSeven Logo" 
+                     fill 
+                     className="object-contain object-left md:object-center" 
+                     sizes="(max-width: 768px) 256px, 512px"
+                     priority
+                   />
+                </span>
               </span>
-              <div className="relative h-[0.9em] w-[3.6em] opacity-40 mix-blend-screen transition-opacity hover:opacity-100">
-                 <Image 
-                   src="/assets/veroseven_logo_png.png" 
-                   alt="VeroSeven Logo" 
-                   fill 
-                   className="object-contain object-left md:object-center" 
-                   sizes="(max-width: 768px) 256px, 512px"
-                   priority
-                 />
-              </div>
+              <span>INNOVATIONS</span>
             </h2>
           </div>
         </div>
